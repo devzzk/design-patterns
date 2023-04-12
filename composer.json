@@ -10,7 +10,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Creational\\": "1-Creational/"
+            "Creational\\": "1-Creational/",
+            "Structural\\": "2-Structural/"
         }
     },
     "autoload-dev": {
