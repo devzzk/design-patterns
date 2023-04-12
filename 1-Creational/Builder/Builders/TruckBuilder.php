@@ -1,0 +1,47 @@
+<?php
+
+namespace Creational\Builder\Builders;
+
+use Creational\Builder\Interfaces\Builder;
+use Creational\Builder\Parts\Door;
+use Creational\Builder\Parts\Engine;
+use Creational\Builder\Parts\Truck;
+use Creational\Builder\Parts\Vehicle;
+use Creational\Builder\Parts\Wheel;
+
+class TruckBuilder implements Builder
+{
+
+    private Truck $truck;
+
+    public function addWheel(): void
+    {
+        $this->truck->setPart('rightDoor', new Door());
+        $this->truck->setPart('leftDoor', new Door());
+    }
+
+    public function addEngine(): void
+    {
+        $this->truck->setPart('truckEngine', new Engine());
+    }
+
+    public function addDoors(): void
+    {
+        $this->truck->setPart('wheel1', new Wheel());
+        $this->truck->setPart('wheel2', new Wheel());
+        $this->truck->setPart('wheel3', new Wheel());
+        $this->truck->setPart('wheel4', new Wheel());
+        $this->truck->setPart('wheel5', new Wheel());
+        $this->truck->setPart('wheel6', new Wheel());
+    }
+
+    public function getVehicle(): Vehicle
+    {
+        return $this->truck;
+    }
+
+    public function createVehicle():void
+    {
+        $this->truck = new Truck();
+    }
+}
